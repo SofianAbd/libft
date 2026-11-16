@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saissani <saissani>                        +#+  +:+       +#+        */
+/*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 16:23:34 by saissani          #+#    #+#             */
-/*   Updated: 2026/10/15 16:26:15 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/15 17:00:30 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,20 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	while (n > 0)
+	unsigned char	*s;
+	unsigned char	*d;
+
+	if (dest != NULL || src != NULL)
 	{
-		*(char *)dest = *(char *)src;
-		dest++;
-		src++;
-		n--;
+		s = (unsigned char *)src;
+		d = (unsigned char *)dest;
+		while (n > 0)
+		{
+			*d = *s;
+			s++;
+			d++;
+			n--;
+		}
 	}
 	return (dest);
 }

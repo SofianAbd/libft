@@ -1,108 +1,88 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/11/16 19:03:02 by saissani          #+#    #+#             */
+/*   Updated: 2026/11/16 19:16:27 by saissani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void    free_all(char **strs, int i)
+void	var_ini(unsigned int *i,unsigned int *mot)
 {
-    int n = 0;
-    while ( n < i)
-    {
-        free(strs[n]);
-        n++;
-    }
-    free(strs);
+	*i = 0;
+	*mot = 0;
 }
 
-int count_word(const char*s, char c)
+int	count_word(const char*s, char c)
 {
-    int i =0;
-    int count = 0;
-    while (s[i])
-    {
-        if (s[i] == c)
-            i++;
-        else
-        {
-            count++;
-            while (s[i] != c)
-                i++;
-        }
-    }
-    return count;
+	int	i;
+	int	count;
+
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			i++;
+		else
+		{
+			count++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+	}
+	return (count);
 }
 
-char **ft_split(const char *s, char c)
+void	free_all(char **strs)
 {
-    int i;
-    int j;
-    char **strs;
-    
-    i = 0;
-    strs = malloc(sizeof(char*) * ((count_word(s, c)) + 1));
-    if (!strs)
-    {
-        free(strs);
-    }
-    while (s[i] != '\0')
-    {
-        if (s[i] == c)
-        {
-            i++;
-        }
-        else
-        {
-            j = i;
-            while (s[i] != c)
-            {
-                i++;
-            }
-            
-        }
-    }
-    i++;
-    strs[i] = malloc(sizeof(char*));
-    strs[i] = (char*)NULL;
-    if (!strs[i])
-    {
-        printf("feur");
-        free_all(strs, i);
-    }
-    return strs;
+	int	n;
+
+	n = 0;
+	if (!strs)
+		return ;
+	while (strs[n])
+	{
+		free(strs[n]);
+		n++;
+	}
+	free(strs);
 }
 
-// char **ft_split(char *s, char c)
+char	**ft_split(const char *s, char c)
+{
+	unsigned int	i;
+	char			**strs;
+	unsigned int	debut;
+	unsigned int	mot;
+
+	var_ini(&mot, &i);
+	if (!s || !*s || !count_word(s, c))
+		return (ft_calloc(1, sizeof(char *)));
+	strs = ft_calloc((count_word(s, c) + 1), sizeof(char *));
+	if (!strs)
+		return (NULL);
+	while (s[i])
+	{
+		while (s[i] == c && s[i])
+			i++;
+		debut = i;
+		if (s[i] == '\0')
+			break ;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+		strs[mot] = ft_substr(s, debut, i - debut);
+		if (!strs[mot++])
+			return (free_all(strs), NULL);
+	}
+	return (strs);
+}
+// int main()
 // {
-//     int i =0;
-//     char **strs = malloc(sizeof(char*) * ((count_word(s, c)) + 1));
-//     if (!strs)
-//     {
-//         free(strs);
-//     }
-//     while (*s != '\0')
-//     {
-//         if (*s == c)
-//         {
-//             *s = '\0';
-//             s++;
-//         }
-//         else
-//         {
-//             strs[i] = malloc(sizeof(char*));
-//             strs[i] = s;
-//             if (!strs[i])
-//             {
-//                 free_all(strs, i);
-//             }
-//             i++;
-//             while ( *s != c)
-//                 s++;
-//         }
-//     }
-//     i++;
-//     strs[i] = malloc(sizeof(char*));
-//     strs[i] = (char*)NULL;
-//     if (!strs[i])
-//     {
-//         printf("feur");
-//         free_all(strs, i);
-//     }
-//     return strs;
+//     printf("%d",count_word("salut",' '));
 // }

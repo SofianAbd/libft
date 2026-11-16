@@ -3,14 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: saissani <saissani>                        +#+  +:+       +#+        */
+/*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 15:52:54 by sofian            #+#    #+#             */
-/*   Updated: 2026/10/15 15:56:13 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/16 20:43:56 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -18,5 +16,6 @@ void	ft_bzero(void *s, size_t n)
 	{
 		*(char *)s = '\0';
 		n--;
+		s++;
 	}
 }
