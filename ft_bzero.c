@@ -6,9 +6,11 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 15:52:54 by sofian            #+#    #+#             */
-/*   Updated: 2026/11/16 20:43:56 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:23:07 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stddef.h>
 
 void	ft_bzero(void *s, size_t n)
 {

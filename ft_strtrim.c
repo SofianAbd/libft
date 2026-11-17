@@ -6,13 +6,11 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:22:49 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/15 18:24:17 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:16:19 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {

@@ -6,11 +6,11 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:20:15 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/15 18:21:15 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:15:36 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 
 	if (!(*little))
 		return ((char *)big);
-	while (*big && len > 0)
+	while (len > 0 && *big)
 	{
 		tempb = (char *)big;
 		templ = (char *)little;
@@ -30,9 +30,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			tempb++;
 			templ++;
 			templen--;
-			if (*templ == '\0')
-				return ((char *)big);
 		}
+		if (*templ == '\0')
+			return ((char *)big);
 		big++;
 		len--;
 	}

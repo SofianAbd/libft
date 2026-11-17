@@ -6,11 +6,9 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:05:25 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/15 18:06:22 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:12:32 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {

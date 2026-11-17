@@ -6,7 +6,7 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/15 18:09:42 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/15 18:10:40 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:25:30 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	j;
 
 	lensrc = ft_strlen(src);
-	lendst = ft_strlen(dst);
+	lendst = 0;
+	while (lendst < size && dst[lendst])
+		lendst++;
 	i = 0;
 	j = lendst;
 	if (!src || !dst)

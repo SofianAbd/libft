@@ -6,12 +6,11 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 16:23:34 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/15 17:00:30 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 01:10:28 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <stdio.h>
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

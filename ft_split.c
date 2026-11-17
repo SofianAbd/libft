@@ -6,13 +6,13 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/16 19:03:02 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/16 19:16:27 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/17 00:41:15 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	var_ini(unsigned int *i,unsigned int *mot)
+void	var_ini(unsigned int *i, unsigned int *mot)
 {
 	*i = 0;
 	*mot = 0;

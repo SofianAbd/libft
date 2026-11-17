@@ -6,9 +6,11 @@
 /*   By: saissani <saissani@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/15 16:14:21 by saissani          #+#    #+#             */
-/*   Updated: 2026/11/16 20:44:54 by saissani         ###   ########.fr       */
+/*   Updated: 2026/11/16 21:59:15 by saissani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
